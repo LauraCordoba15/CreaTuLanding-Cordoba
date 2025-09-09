@@ -1,14 +1,23 @@
 import React from "react";
 import CartWidget from "./CartWidget";
+import Logo from "../assets/Logo.png"
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         {/* Logo */}
-        <a className="navbar-brand fw-bold" href="#home">
-          RunFast Store
+        <a className="navbar-brand d-flex align-items-center" href="#home">
+          <img 
+            src={Logo} 
+            alt="RunFast Store Logo" 
+            width="40" 
+            height="40" 
+            className="me-2"
+          />
+          <span className="fw-bold">RunFast Store</span>
         </a>
+
 
         {/* Botón toggler para mobile */}
         <button
