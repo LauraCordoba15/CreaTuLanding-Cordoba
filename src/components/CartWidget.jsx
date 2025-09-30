@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 const CartWidget = () => {
+  const { totalItems } = useContext(CartContext);
+
   return (
-    <a href="#cart" className="text-white text-decoration-none d-flex align-items-center">
-      {/* Icono de carrito de Bootstrap Icons */}
+    <Link to="/cart" className="text-white text-decoration-none d-flex align-items-center">
       <i className="bi bi-cart3 fs-5"></i>
-      {/* Badge con número de items */}
-      <span className="badge bg-danger ms-2">2</span>
-    </a>
+      {totalItems > 0 && (
+        <span className="badge bg-danger ms-2">{totalItems}</span>
+      )}
+    </Link>
   );
 };
 
 export default CartWidget;
+
